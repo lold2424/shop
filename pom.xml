@@ -126,7 +126,26 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>com.querydsl</groupId>
+				<artifactId>querydsl-codegen-plugin</artifactId>
+				<version>5.0.0</version>
+				<executions>
+					<execution>
+						<configuration>
+							<sources>
+								<sourceDirectory>src/main/java</sourceDirectory>
+							</sources>
+							<targetDirectory>target/generated-sources/querydsl</targetDirectory>
+							<processor>com.querydsl.core.DefaultQuerydslProcessor</processor>
+							<annotationProcessor>com.querydsl.jpa.JPAAnnotationProcessor</annotationProcessor>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
